@@ -1,3 +1,5 @@
 (fp_lib_table
   (lib (name HD3SS3202IRSVT)(type KiCad)(uri ${KIPRJMOD}/lib/HD3SS3202IRSVT.pretty)(options "")(descr ""))
+  (lib (name STM32G030J6M6)(type KiCad)(uri ${KIPRJMOD}/lib/STM32G030J6M6.pretty)(options "")(descr ""))
+  (lib (name USB7002_KDX)(type KiCad)(uri ${KIPRJMOD}/lib/USB7002_KDX.pretty)(options "")(descr ""))
 )
