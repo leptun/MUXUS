@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name HD3SS3202IRSVT)(type KiCad)(uri ${KIPRJMOD}/lib/HD3SS3202IRSVT.pretty)(options "")(descr ""))
+)
