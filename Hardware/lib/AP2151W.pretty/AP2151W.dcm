@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP2151W
+D Current limited power switch, single channel, SOT-23-5
+K Limit USB Active High
+F https://www.diodes.com/assets/Datasheets/AP2161.pdf
+$ENDCMP
+#
+#End Doc Library

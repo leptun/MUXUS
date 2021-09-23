@@ -1,5 +1,7 @@
 (sym_lib_table
-  (lib (name HD3SS3202IRSVT)(type Legacy)(uri ${KIPRJMOD}/lib/HD3SS3202IRSVT.pretty/HD3SS3202IRSVT.lib)(options "")(descr ""))
-  (lib (name STM32G030J6M6)(type Legacy)(uri ${KIPRJMOD}/lib/STM32G030J6M6.pretty/STM32G030J6M6.lib)(options "")(descr ""))
-  (lib (name USB7002_KDX)(type Legacy)(uri ${KIPRJMOD}/lib/USB7002_KDX.pretty/USB7002_KDX.lib)(options "")(descr ""))
+  (lib (name STM32G431K8T6)(type Legacy)(uri ${KIPRJMOD}/lib/STM32G431K8T6.pretty/STM32G431K8T6.lib)(options "")(descr ""))
+  (lib (name TS3USBCA420RSVR)(type Legacy)(uri ${KIPRJMOD}/lib/TS3USBCA420RSVR.pretty/TS3USBCA420RSVR.lib)(options "")(descr ""))
+  (lib (name AP2151W)(type Legacy)(uri ${KIPRJMOD}/lib/AP2151W.pretty/AP2151W.lib)(options "")(descr ""))
+  (lib (name AOZ1212AI)(type Legacy)(uri ${KIPRJMOD}/lib/AOZ1212AI.pretty/AOZ1212AI.lib)(options "")(descr ""))
+  (lib (name USB2504A-JT)(type Legacy)(uri ${KIPRJMOD}/lib/USB2504A-JT.pretty/USB2504A-JT.lib)(options "")(descr ""))
 )

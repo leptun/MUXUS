@@ -1,0 +1,12 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP +1V15
+D Power symbol creates a global label with name "+1V15"
+K power-flag
+$ENDCMP
+#
+$CMP USB7216CT_KDX
+F https://www.microchip.com/en-us/product/USB7216C
+$ENDCMP
+#
+#End Doc Library

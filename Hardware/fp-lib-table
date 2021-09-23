@@ -1,5 +1,7 @@
 (fp_lib_table
-  (lib (name HD3SS3202IRSVT)(type KiCad)(uri ${KIPRJMOD}/lib/HD3SS3202IRSVT.pretty)(options "")(descr ""))
-  (lib (name STM32G030J6M6)(type KiCad)(uri ${KIPRJMOD}/lib/STM32G030J6M6.pretty)(options "")(descr ""))
-  (lib (name USB7002_KDX)(type KiCad)(uri ${KIPRJMOD}/lib/USB7002_KDX.pretty)(options "")(descr ""))
+  (lib (name STM32G431K8T6)(type KiCad)(uri ${KIPRJMOD}/lib/STM32G431K8T6.pretty)(options "")(descr ""))
+  (lib (name 67068-9000)(type KiCad)(uri ${KIPRJMOD}/lib/67068-9000.pretty)(options "")(descr ""))
+  (lib (name 67643-0910)(type KiCad)(uri ${KIPRJMOD}/lib/67643-0910.pretty)(options "")(descr ""))
+  (lib (name SRP6530A-6R8M)(type KiCad)(uri ${KIPRJMOD}/lib/SRP6530A-6R8M.pretty)(options "")(descr ""))
+  (lib (name DX07S016JA1R1500)(type KiCad)(uri ${KIPRJMOD}/lib/DX07S016JA1R1500.pretty)(options "")(descr ""))
 )

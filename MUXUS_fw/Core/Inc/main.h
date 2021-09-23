@@ -28,7 +28,19 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32g0xx_hal.h"
+#include "stm32g4xx_hal.h"
+
+#include "stm32g4xx_ll_ucpd.h"
+#include "stm32g4xx_ll_bus.h"
+#include "stm32g4xx_ll_cortex.h"
+#include "stm32g4xx_ll_rcc.h"
+#include "stm32g4xx_ll_system.h"
+#include "stm32g4xx_ll_utils.h"
+#include "stm32g4xx_ll_pwr.h"
+#include "stm32g4xx_ll_gpio.h"
+#include "stm32g4xx_ll_dma.h"
+
+#include "stm32g4xx_ll_exti.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -58,6 +70,24 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define UI_LED1_Pin GPIO_PIN_0
+#define UI_LED1_GPIO_Port GPIOF
+#define UI_LED2_Pin GPIO_PIN_1
+#define UI_LED2_GPIO_Port GPIOF
+#define NRST_Pin GPIO_PIN_10
+#define NRST_GPIO_Port GPIOG
+#define UI_LED3_Pin GPIO_PIN_0
+#define UI_LED3_GPIO_Port GPIOA
+#define UI_LED4_Pin GPIO_PIN_1
+#define UI_LED4_GPIO_Port GPIOA
+#define IFP_VBUS_Pin GPIO_PIN_7
+#define IFP_VBUS_GPIO_Port GPIOA
+#define HUB_RESET_Pin GPIO_PIN_0
+#define HUB_RESET_GPIO_Port GPIOB
+#define UI_BUTTON_Pin GPIO_PIN_8
+#define UI_BUTTON_GPIO_Port GPIOA
+#define BOOT0_Pin GPIO_PIN_8
+#define BOOT0_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
