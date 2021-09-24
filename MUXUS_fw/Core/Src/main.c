@@ -499,12 +499,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(HUB_RESET_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : UI_BUTTON_Pin */
-  GPIO_InitStruct.Pin = UI_BUTTON_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(UI_BUTTON_GPIO_Port, &GPIO_InitStruct);
-
   /*Configure GPIO pin : BOOT0_Pin */
   GPIO_InitStruct.Pin = BOOT0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;

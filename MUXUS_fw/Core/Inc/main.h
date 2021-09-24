@@ -84,8 +84,6 @@ void Error_Handler(void);
 #define IFP_VBUS_GPIO_Port GPIOA
 #define HUB_RESET_Pin GPIO_PIN_0
 #define HUB_RESET_GPIO_Port GPIOB
-#define UI_BUTTON_Pin GPIO_PIN_8
-#define UI_BUTTON_GPIO_Port GPIOA
 #define BOOT0_Pin GPIO_PIN_8
 #define BOOT0_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
