@@ -413,13 +413,13 @@ Text GLabel 8500 9400 2    50   Input ~ 0
 UFP2_D+
 Text GLabel 8500 9500 2    50   Input ~ 0
 UFP2_D-
-Text GLabel 8500 9700 2    50   Input ~ 0
-UFP3_D+
-Text GLabel 8500 9800 2    50   Input ~ 0
-UFP3_D-
 Text GLabel 8500 10000 2    50   Input ~ 0
-UFP4_D+
+UFP3_D+
 Text GLabel 8500 10100 2    50   Input ~ 0
+UFP3_D-
+Text GLabel 8500 9700 2    50   Input ~ 0
+UFP4_D+
+Text GLabel 8500 9800 2    50   Input ~ 0
 UFP4_D-
 Text GLabel 7400 9700 0    50   Input ~ 0
 IFP_D+
@@ -855,37 +855,9 @@ F 3 "https://www.st.com/resource/en/datasheet/usblc6-4.pdf" H 2850 2900 50  0001
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2050 1650 2250 1650
-Wire Wire Line
-	2050 1850 2150 1850
-Wire Wire Line
 	2250 2650 2150 2650
 Wire Wire Line
-	2150 2650 2150 1850
-Connection ~ 2150 1850
-Wire Wire Line
-	2150 1850 3250 1850
-Wire Wire Line
-	2250 2450 2250 1650
-Connection ~ 2250 1650
-Wire Wire Line
-	2250 1650 3250 1650
-Wire Wire Line
-	3050 2450 3050 1300
-Wire Wire Line
-	3050 1300 2000 1300
-Connection ~ 3050 1300
-Wire Wire Line
-	2000 1400 3150 1400
-Wire Wire Line
-	3050 1300 3250 1300
-Wire Wire Line
 	3050 2650 3150 2650
-Wire Wire Line
-	3150 2650 3150 1400
-Connection ~ 3150 1400
-Wire Wire Line
-	3150 1400 3250 1400
 Wire Wire Line
 	3350 1500 3250 1500
 Wire Wire Line
@@ -3138,4 +3110,32 @@ F 3 "" H 850 10900 50  0001 C CNN
 	1    850  10900
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2050 1850 3050 1850
+Wire Wire Line
+	2050 1650 2150 1650
+Wire Wire Line
+	2000 1300 2250 1300
+Wire Wire Line
+	2000 1400 3150 1400
+Wire Wire Line
+	3150 2650 3150 1400
+Connection ~ 3150 1400
+Wire Wire Line
+	3150 1400 3250 1400
+Wire Wire Line
+	2250 2450 2250 1300
+Connection ~ 2250 1300
+Wire Wire Line
+	2250 1300 3250 1300
+Wire Wire Line
+	3050 1850 3050 2450
+Connection ~ 3050 1850
+Wire Wire Line
+	3050 1850 3250 1850
+Wire Wire Line
+	2150 2650 2150 1650
+Connection ~ 2150 1650
+Wire Wire Line
+	2150 1650 3250 1650
 $EndSCHEMATC

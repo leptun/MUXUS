@@ -413,13 +413,13 @@ Text GLabel 8500 9400 2    50   Input ~ 0
 UFP2_D+
 Text GLabel 8500 9500 2    50   Input ~ 0
 UFP2_D-
-Text GLabel 8500 9700 2    50   Input ~ 0
-UFP3_D+
-Text GLabel 8500 9800 2    50   Input ~ 0
-UFP3_D-
 Text GLabel 8500 10000 2    50   Input ~ 0
-UFP4_D+
+UFP3_D+
 Text GLabel 8500 10100 2    50   Input ~ 0
+UFP3_D-
+Text GLabel 8500 9700 2    50   Input ~ 0
+UFP4_D+
+Text GLabel 8500 9800 2    50   Input ~ 0
 UFP4_D-
 Text GLabel 7400 9700 0    50   Input ~ 0
 IFP_D+
@@ -3089,7 +3089,7 @@ U 1 1 615352EC
 P 950 10500
 F 0 "H3" V 904 10650 50  0000 L CNN
 F 1 "MountingHole_Pad" V 995 10650 50  0000 L CNN
-F 2 "" H 950 10500 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 950 10500 50  0001 C CNN
 F 3 "~" H 950 10500 50  0001 C CNN
 	1    950  10500
 	0    1    1    0   
@@ -3100,7 +3100,7 @@ U 1 1 61536034
 P 950 10250
 F 0 "H2" V 904 10400 50  0000 L CNN
 F 1 "MountingHole_Pad" V 995 10400 50  0000 L CNN
-F 2 "" H 950 10250 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 950 10250 50  0001 C CNN
 F 3 "~" H 950 10250 50  0001 C CNN
 	1    950  10250
 	0    1    1    0   
@@ -3111,7 +3111,7 @@ U 1 1 61536512
 P 950 10750
 F 0 "H4" V 904 10900 50  0000 L CNN
 F 1 "MountingHole_Pad" V 995 10900 50  0000 L CNN
-F 2 "" H 950 10750 50  0001 C CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 950 10750 50  0001 C CNN
 F 3 "~" H 950 10750 50  0001 C CNN
 	1    950  10750
 	0    1    1    0   
