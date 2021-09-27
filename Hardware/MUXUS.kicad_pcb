@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 4)
+    (drawings 8)
     (tracks 0)
     (zones 0)
     (modules 120)
@@ -5142,9 +5142,13 @@
       (net 3 "Net-(C2-Pad2)"))
   )
 
-  (gr_line (start 15.24 114.3) (end 15.24 15.24) (layer Edge.Cuts) (width 0.05) (tstamp 61515A14))
-  (gr_line (start 114.3 114.3) (end 15.24 114.3) (layer Edge.Cuts) (width 0.05))
-  (gr_line (start 114.3 15.24) (end 114.3 114.3) (layer Edge.Cuts) (width 0.05))
-  (gr_line (start 15.24 15.24) (end 114.3 15.24) (layer Edge.Cuts) (width 0.05))
+  (gr_arc (start 109.22 109.22) (end 109.22 114.3) (angle -90) (layer Edge.Cuts) (width 0.05))
+  (gr_arc (start 20.32 109.22) (end 15.24 109.22) (angle -90) (layer Edge.Cuts) (width 0.05))
+  (gr_arc (start 20.32 20.32) (end 20.32 15.24) (angle -90) (layer Edge.Cuts) (width 0.05))
+  (gr_arc (start 109.22 20.32) (end 114.3 20.32) (angle -90) (layer Edge.Cuts) (width 0.05))
+  (gr_line (start 114.3 109.22) (end 114.3 20.32) (layer Edge.Cuts) (width 0.05))
+  (gr_line (start 20.32 15.24) (end 109.22 15.24) (layer Edge.Cuts) (width 0.05))
+  (gr_line (start 15.24 20.32) (end 15.24 109.22) (layer Edge.Cuts) (width 0.05))
+  (gr_line (start 20.32 114.3) (end 109.22 114.3) (layer Edge.Cuts) (width 0.05))
 
 )
