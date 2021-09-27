@@ -7,4 +7,5 @@
   (lib (name ATS240C)(type KiCad)(uri ${KIPRJMOD}/lib/ATS240C.pretty)(options "")(descr ""))
   (lib (name FTSH-107-01-L-DV-K-A)(type KiCad)(uri ${KIPRJMOD}/lib/FTSH-107-01-L-DV-K-A.pretty)(options "")(descr ""))
   (lib (name TS3USBCA420RSVR)(type KiCad)(uri ${KIPRJMOD}/lib/TS3USBCA420RSVR.pretty)(options "")(descr ""))
+  (lib (name AMOGUS)(type KiCad)(uri ${KIPRJMOD}/lib/AMOGUS.pretty)(options "")(descr ""))
 )
