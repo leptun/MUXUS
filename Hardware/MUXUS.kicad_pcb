@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 27)
+    (drawings 28)
     (tracks 1879)
     (zones 0)
     (modules 122)
@@ -5243,6 +5243,9 @@
       (net 3 "Net-(C2-Pad2)"))
   )
 
+  (gr_text JLCJLCJLCJLC (at 71.12 54.61) (layer F.SilkS)
+    (effects (font (size 0.889 0.889) (thickness 0.127)))
+  )
   (gr_text RX (at 21.59 101.6) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
