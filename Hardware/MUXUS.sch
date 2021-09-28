@@ -3137,4 +3137,64 @@ Wire Wire Line
 Wire Wire Line
 	2400 4350 2600 4350
 Connection ~ 2400 4650
+$Comp
+L Connector_Generic:Conn_01x06 J9
+U 1 1 615B40A3
+P 12450 8450
+F 0 "J9" H 12530 8442 50  0000 L CNN
+F 1 "SWD" H 12530 8351 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 12450 8450 50  0001 C CNN
+F 3 "~" H 12450 8450 50  0001 C CNN
+	1    12450 8450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J10
+U 1 1 615B75B8
+P 12450 8950
+F 0 "J10" H 12530 8942 50  0000 L CNN
+F 1 "VCP" H 12530 8851 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 12450 8950 50  0001 C CNN
+F 3 "~" H 12450 8950 50  0001 C CNN
+	1    12450 8950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR063
+U 1 1 615B80D0
+P 11900 8250
+F 0 "#PWR063" H 11900 8100 50  0001 C CNN
+F 1 "+3.3V" H 11915 8423 50  0000 C CNN
+F 2 "" H 11900 8250 50  0001 C CNN
+F 3 "" H 11900 8250 50  0001 C CNN
+	1    11900 8250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11900 8250 12250 8250
+Text GLabel 12250 8350 0    50   Input ~ 0
+SWCLK
+$Comp
+L power:GND #PWR064
+U 1 1 615DED53
+P 11900 8450
+F 0 "#PWR064" H 11900 8200 50  0001 C CNN
+F 1 "GND" H 11905 8277 50  0000 C CNN
+F 2 "" H 11900 8450 50  0001 C CNN
+F 3 "" H 11900 8450 50  0001 C CNN
+	1    11900 8450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11900 8450 12250 8450
+Text GLabel 12250 8550 0    50   Input ~ 0
+SWDIO
+Text GLabel 12250 8650 0    50   Input ~ 0
+NRST
+Text GLabel 12250 8750 0    50   Input ~ 0
+SWO
+Text GLabel 12250 8950 0    50   Input ~ 0
+LPUART1_TX
+Text GLabel 12250 9050 0    50   Input ~ 0
+LPUART1_RX
 $EndSCHEMATC
