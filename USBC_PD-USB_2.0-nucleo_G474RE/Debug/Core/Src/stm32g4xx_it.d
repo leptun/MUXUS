@@ -29,9 +29,32 @@ Core/Src/stm32g4xx_it.o: ../Core/Src/stm32g4xx_it.c ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
- ../Core/Inc/stm32g4xx_it.h
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_lpuart.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_rcc.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_ucpd.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_bus.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_cortex.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_system.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_utils.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_pwr.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h \
+ ../Core/Inc/stm32g4xx_it.h ../USBPD/App/usbpd.h \
+ ../Middlewares/ST/STM32_USBPD_Library/Core/inc/usbpd_core.h \
+ ../Middlewares/ST/STM32_USBPD_Library/Core/inc/usbpd_def.h \
+ ../Drivers/CMSIS/Include/cmsis_compiler.h ../USBPD/usbpd_dpm_core.h \
+ ../USBPD/usbpd_dpm_conf.h ../USBPD/usbpd_pdo_defs.h \
+ ../Middlewares/ST/STM32_USBPD_Library/Core/inc/usbpd_def.h \
+ ../USBPD/usbpd_dpm_user.h ../USBPD/usbpd_vdm_user.h \
+ ../Utilities/GUI_INTERFACE/gui_api.h ../Core/Inc/usbpd_gui_memmap.h \
+ ../Middlewares/ST/STM32_USBPD_Library/Devices/STM32G4XX/inc/usbpd_hw_if.h \
+ ../USBPD/usbpd_devices_conf.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_tim.h \
+ ../USBPD/usbpd_pwr_user.h ../USBPD/usbpd_pwr_if.h \
+ ../Utilities/TRACER_EMB/tracer_emb.h ../Core/Inc/tracer_emb_conf.h \
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_usart.h
 
 ../Core/Inc/main.h:
 
@@ -95,8 +118,68 @@ Core/Src/stm32g4xx_it.o: ../Core/Src/stm32g4xx_it.c ../Core/Inc/main.h \
 
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h:
 
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_lpuart.h:
 
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_rcc.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_ucpd.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_bus.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_cortex.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_system.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_utils.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_pwr.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h:
 
 ../Core/Inc/stm32g4xx_it.h:
+
+../USBPD/App/usbpd.h:
+
+../Middlewares/ST/STM32_USBPD_Library/Core/inc/usbpd_core.h:
+
+../Middlewares/ST/STM32_USBPD_Library/Core/inc/usbpd_def.h:
+
+../Drivers/CMSIS/Include/cmsis_compiler.h:
+
+../USBPD/usbpd_dpm_core.h:
+
+../USBPD/usbpd_dpm_conf.h:
+
+../USBPD/usbpd_pdo_defs.h:
+
+../Middlewares/ST/STM32_USBPD_Library/Core/inc/usbpd_def.h:
+
+../USBPD/usbpd_dpm_user.h:
+
+../USBPD/usbpd_vdm_user.h:
+
+../Utilities/GUI_INTERFACE/gui_api.h:
+
+../Core/Inc/usbpd_gui_memmap.h:
+
+../Middlewares/ST/STM32_USBPD_Library/Devices/STM32G4XX/inc/usbpd_hw_if.h:
+
+../USBPD/usbpd_devices_conf.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_tim.h:
+
+../USBPD/usbpd_pwr_user.h:
+
+../USBPD/usbpd_pwr_if.h:
+
+../Utilities/TRACER_EMB/tracer_emb.h:
+
+../Core/Inc/tracer_emb_conf.h:
+
+../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_usart.h:

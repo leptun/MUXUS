@@ -33,12 +33,18 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32G4xx_HAL_Driver/Src \
+Middlewares/ST/STM32_USBPD_Library/Core/src \
+Middlewares/ST/STM32_USBPD_Library/Devices/STM32G4XX/src \
 Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
+USBPD/App \
+USBPD \
 USB_Device/App \
 USB_Device/Target \
+Utilities/GUI_INTERFACE \
+Utilities/TRACER_EMB \
 

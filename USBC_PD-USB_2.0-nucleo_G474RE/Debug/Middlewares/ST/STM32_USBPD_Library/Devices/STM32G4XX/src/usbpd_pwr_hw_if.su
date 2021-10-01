@@ -1,0 +1,4 @@
+usbpd_pwr_hw_if.c:42:21:HW_IF_PWR_SetVoltage	16	static
+usbpd_pwr_hw_if.c:49:10:HW_IF_PWR_GetVoltage	24	static
+usbpd_pwr_hw_if.c:56:9:HW_IF_PWR_GetCurrent	24	static
+usbpd_pwr_hw_if.c:96:23:HW_IF_PWR_VBUSIsEnabled	16	static
