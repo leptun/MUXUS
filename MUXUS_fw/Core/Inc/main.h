@@ -80,10 +80,18 @@ void Error_Handler(void);
 #define UI_LED3_GPIO_Port GPIOA
 #define UI_LED4_Pin GPIO_PIN_1
 #define UI_LED4_GPIO_Port GPIOA
-#define IFP_VBUS_Pin GPIO_PIN_7
-#define IFP_VBUS_GPIO_Port GPIOA
+#define UFP2_VBUS_Pin GPIO_PIN_4
+#define UFP2_VBUS_GPIO_Port GPIOA
+#define UFP3_VBUS_Pin GPIO_PIN_5
+#define UFP3_VBUS_GPIO_Port GPIOA
+#define UFP4_VBUS_Pin GPIO_PIN_6
+#define UFP4_VBUS_GPIO_Port GPIOA
+#define UFP1_VBUS_Pin GPIO_PIN_7
+#define UFP1_VBUS_GPIO_Port GPIOA
 #define HUB_RESET_Pin GPIO_PIN_0
 #define HUB_RESET_GPIO_Port GPIOB
+#define IFP_VBUS_Pin GPIO_PIN_8
+#define IFP_VBUS_GPIO_Port GPIOA
 #define BOOT0_Pin GPIO_PIN_8
 #define BOOT0_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
