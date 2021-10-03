@@ -3018,31 +3018,8 @@ F 3 "~" H 2575 10080 50  0001 C CNN
 	1    2450 10200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Power_Protection:USBLC6-4SC6 U1
-U 1 1 61A4E349
-P 2650 2550
-F 0 "U1" H 2400 2950 50  0000 C CNN
-F 1 "USBLC6-4SC6" H 3000 2200 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-6" H 2650 2050 50  0001 C CNN
-F 3 "https://www.st.com/resource/en/datasheet/usblc6-4.pdf" H 2850 2900 50  0001 C CNN
-	1    2650 2550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	2050 1850 2150 1850
-Wire Wire Line
-	2150 2650 2150 1850
-Connection ~ 2150 1850
-Wire Wire Line
-	2150 1850 3250 1850
-Wire Wire Line
-	3050 2450 3050 1650
-Wire Wire Line
-	2050 1650 3050 1650
-Connection ~ 3050 1650
-Wire Wire Line
-	3050 1650 3250 1650
+	2050 1650 2150 1650
 Wire Wire Line
 	3000 4950 3000 5400
 Wire Wire Line
@@ -3256,4 +3233,27 @@ Wire Wire Line
 Wire Wire Line
 	8950 8000 8950 7900
 Connection ~ 8950 7900
+Wire Wire Line
+	2050 1850 3050 1850
+Wire Wire Line
+	2150 2650 2150 1650
+Connection ~ 2150 1650
+Wire Wire Line
+	2150 1650 3250 1650
+$Comp
+L Power_Protection:USBLC6-4SC6 U1
+U 1 1 61A4E349
+P 2650 2550
+F 0 "U1" H 2400 2950 50  0000 C CNN
+F 1 "USBLC6-4SC6" H 3000 2200 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 2650 2050 50  0001 C CNN
+F 3 "https://www.st.com/resource/en/datasheet/usblc6-4.pdf" H 2850 2900 50  0001 C CNN
+	1    2650 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 2450 3050 1850
+Connection ~ 3050 1850
+Wire Wire Line
+	3050 1850 3250 1850
 $EndSCHEMATC
