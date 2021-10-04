@@ -3019,8 +3019,6 @@ F 3 "~" H 2575 10080 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2050 1650 2150 1650
-Wire Wire Line
 	3000 4950 3000 5400
 Wire Wire Line
 	2800 4950 3000 4950
@@ -3233,6 +3231,8 @@ Wire Wire Line
 Wire Wire Line
 	8950 8000 8950 7900
 Connection ~ 8950 7900
+Wire Wire Line
+	2050 1650 2150 1650
 Wire Wire Line
 	2050 1850 3050 1850
 Wire Wire Line
