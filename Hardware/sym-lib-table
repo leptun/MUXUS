@@ -1,7 +1,6 @@
 (sym_lib_table
+  (lib (name "leptunKicadLib")(type "KiCad")(uri "${KIPRJMOD}/leptunKicadLib.pretty/leptunKicadLib.kicad_sym")(options "")(descr ""))
   (lib (name "STM32G441KBU6")(type "Legacy")(uri "${KIPRJMOD}/lib/STM32G441KBU6.pretty/STM32G441KBU6.lib")(options "")(descr ""))
-  (lib (name "TS3USBCA420RSVR")(type "Legacy")(uri "${KIPRJMOD}/lib/TS3USBCA420RSVR.pretty/TS3USBCA420RSVR.lib")(options "")(descr ""))
   (lib (name "AP2151W")(type "Legacy")(uri "${KIPRJMOD}/lib/AP2151W.pretty/AP2151W.lib")(options "")(descr ""))
   (lib (name "AOZ1212AI")(type "Legacy")(uri "${KIPRJMOD}/lib/AOZ1212AI.pretty/AOZ1212AI.lib")(options "")(descr ""))
-  (lib (name "leptunKicadLib")(type "KiCad")(uri "${KIPRJMOD}/leptunKicadLib.pretty/leptunKicadLib.kicad_sym")(options "")(descr ""))
 )
