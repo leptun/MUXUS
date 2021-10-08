@@ -341,7 +341,10 @@
       "leptunKicadLib",
       "LibraryLoader"
     ],
-    "pinned_symbol_libs": []
+    "pinned_symbol_libs": [
+      "leptunKicadLib",
+      "LibraryLoader"
+    ]
   },
   "meta": {
     "filename": "MUXUS.kicad_pro",
