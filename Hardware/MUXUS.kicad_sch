@@ -7970,7 +7970,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "AMOGUS" (id 1) (at 64.643 263.398 0))
-    (property "Footprint" "AMOGUS:SUS" (id 2) (at 64.643 262.128 0)
+    (property "Footprint" "leptunKicadLib:AMOGUS" (id 2) (at 64.643 262.128 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 65.405 262.128 0)
@@ -8527,7 +8527,7 @@
     (pin "3" (uuid fa9a0875-a4bd-46df-ae15-b9ffb541246c))
     (pin "30" (uuid 1374e6c2-17d6-4481-adac-98d912b39662))
     (pin "31" (uuid 5aa084db-0971-410e-8a7b-c341dd18e2b4))
-    (pin "32" (uuid 7fb39a5f-b3a6-4109-9d4e-22d2eac8d036))
+    (pin "32" (uuid d1c01246-4c6b-4cf5-aa41-e2563f74e8a0))
     (pin "4" (uuid b7a375d3-7a6a-44e9-9d0d-34078fdcc073))
     (pin "5" (uuid 552f7279-501c-494f-a3f6-ebaac0893f59))
     (pin "6" (uuid 2ab44116-e90b-4530-a493-d409ff76f538))
@@ -9063,7 +9063,7 @@
       (reference "SW2") (unit 1) (value "RESET") (footprint "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm")
     )
     (path "/00000000-0000-0000-0000-0000615445ff"
-      (reference "SYM1") (unit 1) (value "AMOGUS") (footprint "AMOGUS:SUS")
+      (reference "SYM1") (unit 1) (value "AMOGUS") (footprint "leptunKicadLib:AMOGUS")
     )
     (path "/00000000-0000-0000-0000-000061a4e349"
       (reference "U1") (unit 1) (value "USBLC6-4SC6") (footprint "Package_TO_SOT_SMD:SOT-23-6")
