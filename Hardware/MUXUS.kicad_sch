@@ -7934,7 +7934,7 @@
     (uuid 00000000-0000-0000-0000-000061d2f89d)
     (property "Reference" "SW1" (id 0) (at 259.08 232.791 0))
     (property "Value" "USER" (id 1) (at 259.08 235.1024 0))
-    (property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 259.08 234.95 0)
+    (property "Footprint" "leptunKicadLib:DTSM-61N-V-T_R" (id 2) (at 259.08 234.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 259.08 234.95 0)
@@ -7949,7 +7949,7 @@
     (uuid 00000000-0000-0000-0000-000061dd83f5)
     (property "Reference" "SW2" (id 0) (at 259.08 264.541 0))
     (property "Value" "RESET" (id 1) (at 259.08 266.8524 0))
-    (property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm" (id 2) (at 259.08 266.7 0)
+    (property "Footprint" "leptunKicadLib:DTSM-61N-V-T_R" (id 2) (at 259.08 266.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 259.08 266.7 0)
@@ -9076,10 +9076,10 @@
       (reference "R37") (unit 1) (value "1K") (footprint "Resistor_SMD:R_1206_3216Metric")
     )
     (path "/00000000-0000-0000-0000-000061d2f89d"
-      (reference "SW1") (unit 1) (value "USER") (footprint "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm")
+      (reference "SW1") (unit 1) (value "USER") (footprint "leptunKicadLib:DTSM-61N-V-T_R")
     )
     (path "/00000000-0000-0000-0000-000061dd83f5"
-      (reference "SW2") (unit 1) (value "RESET") (footprint "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm")
+      (reference "SW2") (unit 1) (value "RESET") (footprint "leptunKicadLib:DTSM-61N-V-T_R")
     )
     (path "/00000000-0000-0000-0000-0000615445ff"
       (reference "SYM1") (unit 1) (value "AMOGUS") (footprint "leptunKicadLib:AMOGUS")
