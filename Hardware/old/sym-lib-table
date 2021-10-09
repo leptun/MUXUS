@@ -1,7 +1,0 @@
-(sym_lib_table
-  (lib (name USB7216CT_KDX)(type Legacy)(uri ${KIPRJMOD}/lib/USB7216CT_KDX.pretty/USB7216CT_KDX.lib)(options "")(descr ""))
-  (lib (name STM32G030J6M6)(type Legacy)(uri ${KIPRJMOD}/lib/STM32G030J6M6.pretty/STM32G030J6M6.lib)(options "")(descr ""))
-  (lib (name HD3SS3202IRSVT)(type Legacy)(uri ${KIPRJMOD}/lib/HD3SS3202IRSVT.pretty/HD3SS3202IRSVT.lib)(options "")(descr ""))
-  (lib (name 48406-0003)(type Legacy)(uri ${KIPRJMOD}/lib/48406-0003.pretty/48406-0003.lib)(options "")(descr ""))
-  (lib (name 67298-4090)(type Legacy)(uri ${KIPRJMOD}/lib/67298-4090.pretty/67298-4090.lib)(options "")(descr ""))
-)
