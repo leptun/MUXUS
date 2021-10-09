@@ -6293,7 +6293,7 @@
     (uuid 00000000-0000-0000-0000-000061b47f70)
     (property "Reference" "L1" (id 0) (at 340.36 155.194 90))
     (property "Value" "SRP6530A-6R8M" (id 1) (at 340.36 157.5054 90))
-    (property "Footprint" "SRP6530A-6R8M:SRP6530A-6R8M" (id 2) (at 340.36 160.02 0)
+    (property "Footprint" "leptunKicadLib:SRP6530A-6R8M" (id 2) (at 340.36 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 340.36 160.02 0)
@@ -8962,7 +8962,7 @@
       (reference "J10") (unit 1) (value "USB_A") (footprint "67643-0910:67643-0910")
     )
     (path "/00000000-0000-0000-0000-000061b47f70"
-      (reference "L1") (unit 1) (value "SRP6530A-6R8M") (footprint "SRP6530A-6R8M:SRP6530A-6R8M")
+      (reference "L1") (unit 1) (value "SRP6530A-6R8M") (footprint "leptunKicadLib:SRP6530A-6R8M")
     )
     (path "/00000000-0000-0000-0000-00006149f9ef"
       (reference "R1") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0805_2012Metric")
