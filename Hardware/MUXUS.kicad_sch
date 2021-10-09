@@ -8027,7 +8027,7 @@
     (uuid 00000000-0000-0000-0000-000061f739e3)
     (property "Reference" "J6" (id 0) (at 267.97 204.0382 0))
     (property "Value" "STDC14" (id 1) (at 267.97 206.3496 0))
-    (property "Footprint" "FTSH-107-01-L-DV-K-A:FTSH-107-01-L-DV-K-A" (id 2) (at 266.7 217.17 0)
+    (property "Footprint" "leptunKicadLib:FTSH-107-01-L-DV-K-A" (id 2) (at 266.7 217.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 266.7 217.17 0)
@@ -8954,7 +8954,7 @@
       (reference "J5") (unit 1) (value "USB_A") (footprint "67643-0910:67643-0910")
     )
     (path "/00000000-0000-0000-0000-000061f739e3"
-      (reference "J6") (unit 1) (value "STDC14") (footprint "FTSH-107-01-L-DV-K-A:FTSH-107-01-L-DV-K-A")
+      (reference "J6") (unit 1) (value "STDC14") (footprint "leptunKicadLib:FTSH-107-01-L-DV-K-A")
     )
     (path "/00000000-0000-0000-0000-0000615b40a3"
       (reference "J7") (unit 1) (value "SWD") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")

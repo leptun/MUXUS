@@ -5,5 +5,4 @@
   (lib (name "67643-0910")(type "KiCad")(uri "${KIPRJMOD}/lib/67643-0910.pretty")(options "")(descr ""))
   (lib (name "SRP6530A-6R8M")(type "KiCad")(uri "${KIPRJMOD}/lib/SRP6530A-6R8M.pretty")(options "")(descr ""))
   (lib (name "ATS240C")(type "KiCad")(uri "${KIPRJMOD}/lib/ATS240C.pretty")(options "")(descr ""))
-  (lib (name "FTSH-107-01-L-DV-K-A")(type "KiCad")(uri "${KIPRJMOD}/lib/FTSH-107-01-L-DV-K-A.pretty")(options "")(descr ""))
 )
