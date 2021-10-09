@@ -1,0 +1,3 @@
+[submodule "Hardware/leptunKicadLib.pretty"]
+	path = Hardware/leptunKicadLib.pretty
+	url = https://github.com/leptun/leptunKicadLib.pretty

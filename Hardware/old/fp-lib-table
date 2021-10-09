@@ -1,8 +1,0 @@
-(fp_lib_table
-  (lib (name USB7216CT_KDX)(type KiCad)(uri ${KIPRJMOD}/lib/USB7216CT_KDX.pretty)(options "")(descr ""))
-  (lib (name STM32G030J6M6)(type KiCad)(uri ${KIPRJMOD}/lib/STM32G030J6M6.pretty)(options "")(descr ""))
-  (lib (name HD3SS3202IRSVT)(type KiCad)(uri ${KIPRJMOD}/lib/HD3SS3202IRSVT.pretty)(options "")(descr ""))
-  (lib (name 692221030100)(type KiCad)(uri ${KIPRJMOD}/lib/692221030100.pretty)(options "")(descr ""))
-  (lib (name 48406-0003)(type KiCad)(uri ${KIPRJMOD}/lib/48406-0003.pretty)(options "")(descr ""))
-  (lib (name 67298-4090)(type KiCad)(uri ${KIPRJMOD}/lib/67298-4090.pretty)(options "")(descr ""))
-)

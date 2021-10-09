@@ -25,3 +25,4 @@ fp-info-cache
 *.csv
 
 /.metadata/
+/Hardware/MUXUS-backups/

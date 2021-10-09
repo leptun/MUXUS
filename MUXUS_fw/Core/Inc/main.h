@@ -70,24 +70,24 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define UI_LED1_Pin GPIO_PIN_0
-#define UI_LED1_GPIO_Port GPIOF
-#define UI_LED2_Pin GPIO_PIN_1
-#define UI_LED2_GPIO_Port GPIOF
+#define VOLT2_Pin GPIO_PIN_0
+#define VOLT2_GPIO_Port GPIOF
+#define VOLT1_Pin GPIO_PIN_1
+#define VOLT1_GPIO_Port GPIOF
 #define NRST_Pin GPIO_PIN_10
 #define NRST_GPIO_Port GPIOG
-#define UI_LED3_Pin GPIO_PIN_0
-#define UI_LED3_GPIO_Port GPIOA
-#define UI_LED4_Pin GPIO_PIN_1
-#define UI_LED4_GPIO_Port GPIOA
-#define UFP2_VBUS_Pin GPIO_PIN_4
-#define UFP2_VBUS_GPIO_Port GPIOA
-#define UFP3_VBUS_Pin GPIO_PIN_5
-#define UFP3_VBUS_GPIO_Port GPIOA
-#define UFP4_VBUS_Pin GPIO_PIN_6
-#define UFP4_VBUS_GPIO_Port GPIOA
-#define UFP1_VBUS_Pin GPIO_PIN_7
-#define UFP1_VBUS_GPIO_Port GPIOA
+#define VOLT3_Pin GPIO_PIN_0
+#define VOLT3_GPIO_Port GPIOA
+#define VOLT4_Pin GPIO_PIN_1
+#define VOLT4_GPIO_Port GPIOA
+#define LED1_Pin GPIO_PIN_4
+#define LED1_GPIO_Port GPIOA
+#define LED2_Pin GPIO_PIN_5
+#define LED2_GPIO_Port GPIOA
+#define LED3_Pin GPIO_PIN_6
+#define LED3_GPIO_Port GPIOA
+#define LED4_Pin GPIO_PIN_7
+#define LED4_GPIO_Port GPIOA
 #define HUB_RESET_Pin GPIO_PIN_0
 #define HUB_RESET_GPIO_Port GPIOB
 #define IFP_VBUS_Pin GPIO_PIN_8
