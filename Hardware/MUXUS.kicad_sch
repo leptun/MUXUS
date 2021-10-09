@@ -8048,7 +8048,7 @@
     (uuid 00000000-0000-0000-0000-0000614e1175)
     (property "Reference" "J2" (id 0) (at 155.1178 16.0782 0))
     (property "Value" "USB_B" (id 1) (at 155.1178 18.3896 0))
-    (property "Footprint" "67068-9000:67068-9000" (id 2) (at 157.48 29.21 0)
+    (property "Footprint" "leptunKicadLib:67068-9000" (id 2) (at 157.48 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (id 3) (at 157.48 29.21 0)
@@ -8084,7 +8084,7 @@
     (uuid 00000000-0000-0000-0000-00006190b202)
     (property "Reference" "J4" (id 0) (at 244.0178 16.0782 0))
     (property "Value" "USB_B" (id 1) (at 244.0178 18.3896 0))
-    (property "Footprint" "67068-9000:67068-9000" (id 2) (at 246.38 29.21 0)
+    (property "Footprint" "leptunKicadLib:67068-9000" (id 2) (at 246.38 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (id 3) (at 246.38 29.21 0)
@@ -8120,7 +8120,7 @@
     (uuid 00000000-0000-0000-0000-000061927a3b)
     (property "Reference" "J9" (id 0) (at 332.9178 16.0782 0))
     (property "Value" "USB_B" (id 1) (at 332.9178 18.3896 0))
-    (property "Footprint" "67068-9000:67068-9000" (id 2) (at 335.28 29.21 0)
+    (property "Footprint" "leptunKicadLib:67068-9000" (id 2) (at 335.28 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (id 3) (at 335.28 29.21 0)
@@ -8935,13 +8935,13 @@
       (reference "J1") (unit 1) (value "USB_C_Receptacle_USB2.0") (footprint "leptunKicadLib:USB4110-GF-A")
     )
     (path "/00000000-0000-0000-0000-0000614e1175"
-      (reference "J2") (unit 1) (value "USB_B") (footprint "67068-9000:67068-9000")
+      (reference "J2") (unit 1) (value "USB_B") (footprint "leptunKicadLib:67068-9000")
     )
     (path "/00000000-0000-0000-0000-0000614f9c4f"
       (reference "J3") (unit 1) (value "USB_A") (footprint "leptunKicadLib:67643-0910")
     )
     (path "/00000000-0000-0000-0000-00006190b202"
-      (reference "J4") (unit 1) (value "USB_B") (footprint "67068-9000:67068-9000")
+      (reference "J4") (unit 1) (value "USB_B") (footprint "leptunKicadLib:67068-9000")
     )
     (path "/00000000-0000-0000-0000-0000617a921c"
       (reference "J5") (unit 1) (value "USB_A") (footprint "leptunKicadLib:67643-0910")
@@ -8956,7 +8956,7 @@
       (reference "J8") (unit 1) (value "VCP") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-000061927a3b"
-      (reference "J9") (unit 1) (value "USB_B") (footprint "67068-9000:67068-9000")
+      (reference "J9") (unit 1) (value "USB_B") (footprint "leptunKicadLib:67068-9000")
     )
     (path "/00000000-0000-0000-0000-00006185df52"
       (reference "J10") (unit 1) (value "USB_A") (footprint "leptunKicadLib:67643-0910")
