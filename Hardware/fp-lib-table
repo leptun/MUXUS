@@ -1,6 +1,5 @@
 (fp_lib_table
   (lib (name "leptunKicadLib")(type "KiCad")(uri "${KIPRJMOD}/leptunKicadLib.pretty")(options "")(descr ""))
-  (lib (name "STM32G441KBU6")(type "KiCad")(uri "${KIPRJMOD}/lib/STM32G441KBU6.pretty")(options "")(descr ""))
   (lib (name "67068-9000")(type "KiCad")(uri "${KIPRJMOD}/lib/67068-9000.pretty")(options "")(descr ""))
   (lib (name "67643-0910")(type "KiCad")(uri "${KIPRJMOD}/lib/67643-0910.pretty")(options "")(descr ""))
   (lib (name "SRP6530A-6R8M")(type "KiCad")(uri "${KIPRJMOD}/lib/SRP6530A-6R8M.pretty")(options "")(descr ""))
