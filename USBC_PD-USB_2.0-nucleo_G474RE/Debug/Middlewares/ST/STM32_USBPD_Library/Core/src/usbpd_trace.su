@@ -1,3 +1,0 @@
-usbpd_trace.c:106:6:USBPD_TRACE_Init	8	static
-usbpd_trace.c:122:6:USBPD_TRACE_DeInit	4	static
-usbpd_trace.c:128:7:USBPD_TRACE_Add	32	static
