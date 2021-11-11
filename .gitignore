@@ -26,3 +26,7 @@ fp-info-cache
 
 /.metadata/
 /Hardware/MUXUS-backups/
+/MUXUS_fw/Debug/
+/MUXUS_fw/Release/
+/USBC_PD-USB_2.0-nucleo_G474RE/Debug/
+/USBC_PD-USB_2.0-nucleo_G474RE/Release/
