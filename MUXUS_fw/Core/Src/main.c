@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,9 +51,6 @@ DMA_HandleTypeDef hdma_adc1;
 I2C_HandleTypeDef hi2c1;
 DMA_HandleTypeDef hdma_i2c1_rx;
 DMA_HandleTypeDef hdma_i2c1_tx;
-
-UART_HandleTypeDef hlpuart1;
-DMA_HandleTypeDef hdma_lpuart1_tx;
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -244,7 +241,6 @@ static void MX_ADC1_Init(void)
   /* USER CODE END ADC1_Init 0 */
 
   ADC_MultiModeTypeDef multimode = {0};
-  ADC_ChannelConfTypeDef sConfig = {0};
 
   /* USER CODE BEGIN ADC1_Init 1 */
 
@@ -262,8 +258,6 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ContinuousConvMode = DISABLE;
   hadc1.Init.NbrOfConversion = 1;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
-  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.DMAContinuousRequests = DISABLE;
   hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc1.Init.OversamplingMode = DISABLE;
@@ -278,20 +272,7 @@ static void MX_ADC1_Init(void)
   {
     Error_Handler();
   }
-  /** Configure Regular Channel
-  */
-  sConfig.Channel = ADC_CHANNEL_10;
-  sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
-  sConfig.SingleDiff = ADC_SINGLE_ENDED;
-  sConfig.OffsetNumber = ADC_OFFSET_NONE;
-  sConfig.Offset = 0;
-  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN ADC1_Init 2 */
-
   /* USER CODE END ADC1_Init 2 */
 
 }
@@ -323,14 +304,18 @@ static void MX_ADC2_Init(void)
   hadc2.Init.ScanConvMode = ADC_SCAN_DISABLE;
   hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc2.Init.LowPowerAutoWait = DISABLE;
-  hadc2.Init.ContinuousConvMode = DISABLE;
+  hadc2.Init.ContinuousConvMode = ENABLE;
   hadc2.Init.NbrOfConversion = 1;
   hadc2.Init.DiscontinuousConvMode = DISABLE;
   hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc2.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc2.Init.DMAContinuousRequests = DISABLE;
-  hadc2.Init.Overrun = ADC_OVR_DATA_PRESERVED;
-  hadc2.Init.OversamplingMode = DISABLE;
+  hadc2.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
+  hadc2.Init.OversamplingMode = ENABLE;
+  hadc2.Init.Oversampling.Ratio = ADC_OVERSAMPLING_RATIO_16;
+  hadc2.Init.Oversampling.RightBitShift = ADC_RIGHTBITSHIFT_4;
+  hadc2.Init.Oversampling.TriggeredMode = ADC_TRIGGEREDMODE_SINGLE_TRIGGER;
+  hadc2.Init.Oversampling.OversamplingStopReset = ADC_REGOVERSAMPLING_CONTINUED_MODE;
   if (HAL_ADC_Init(&hadc2) != HAL_OK)
   {
     Error_Handler();
@@ -339,7 +324,7 @@ static void MX_ADC2_Init(void)
   */
   sConfig.Channel = ADC_CHANNEL_10;
   sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_640CYCLES_5;
   sConfig.SingleDiff = ADC_SINGLE_ENDED;
   sConfig.OffsetNumber = ADC_OFFSET_NONE;
   sConfig.Offset = 0;
@@ -348,7 +333,8 @@ static void MX_ADC2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN ADC2_Init 2 */
-
+  HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED);
+  HAL_ADC_Start(&hadc2);
   /* USER CODE END ADC2_Init 2 */
 
 }
@@ -411,34 +397,81 @@ static void MX_LPUART1_UART_Init(void)
 
   /* USER CODE END LPUART1_Init 0 */
 
+  LL_LPUART_InitTypeDef LPUART_InitStruct = {0};
+
+  LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* Peripheral clock enable */
+  LL_APB1_GRP2_EnableClock(LL_APB1_GRP2_PERIPH_LPUART1);
+
+  LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOA);
+  /**LPUART1 GPIO Configuration
+  PA2   ------> LPUART1_TX
+  PA3   ------> LPUART1_RX
+  */
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_2;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  GPIO_InitStruct.Alternate = LL_GPIO_AF_12;
+  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_3;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  GPIO_InitStruct.Alternate = LL_GPIO_AF_12;
+  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /* LPUART1 DMA Init */
+
+  /* LPUART1_TX Init */
+  LL_DMA_SetPeriphRequest(DMA1, LL_DMA_CHANNEL_2, LL_DMAMUX_REQ_LPUART1_TX);
+
+  LL_DMA_SetDataTransferDirection(DMA1, LL_DMA_CHANNEL_2, LL_DMA_DIRECTION_MEMORY_TO_PERIPH);
+
+  LL_DMA_SetChannelPriorityLevel(DMA1, LL_DMA_CHANNEL_2, LL_DMA_PRIORITY_LOW);
+
+  LL_DMA_SetMode(DMA1, LL_DMA_CHANNEL_2, LL_DMA_MODE_NORMAL);
+
+  LL_DMA_SetPeriphIncMode(DMA1, LL_DMA_CHANNEL_2, LL_DMA_PERIPH_NOINCREMENT);
+
+  LL_DMA_SetMemoryIncMode(DMA1, LL_DMA_CHANNEL_2, LL_DMA_MEMORY_INCREMENT);
+
+  LL_DMA_SetPeriphSize(DMA1, LL_DMA_CHANNEL_2, LL_DMA_PDATAALIGN_BYTE);
+
+  LL_DMA_SetMemorySize(DMA1, LL_DMA_CHANNEL_2, LL_DMA_MDATAALIGN_BYTE);
+
+  /* LPUART1 interrupt Init */
+  NVIC_SetPriority(LPUART1_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),3, 0));
+  NVIC_EnableIRQ(LPUART1_IRQn);
+
   /* USER CODE BEGIN LPUART1_Init 1 */
 
   /* USER CODE END LPUART1_Init 1 */
-  hlpuart1.Instance = LPUART1;
-  hlpuart1.Init.BaudRate = 921600;
-  hlpuart1.Init.WordLength = UART_WORDLENGTH_8B;
-  hlpuart1.Init.StopBits = UART_STOPBITS_1;
-  hlpuart1.Init.Parity = UART_PARITY_NONE;
-  hlpuart1.Init.Mode = UART_MODE_TX_RX;
-  hlpuart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  hlpuart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  hlpuart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
-  hlpuart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&hlpuart1) != HAL_OK)
+  LPUART_InitStruct.PrescalerValue = LL_LPUART_PRESCALER_DIV1;
+  LPUART_InitStruct.BaudRate = 921600;
+  LPUART_InitStruct.DataWidth = LL_LPUART_DATAWIDTH_8B;
+  LPUART_InitStruct.StopBits = LL_LPUART_STOPBITS_1;
+  LPUART_InitStruct.Parity = LL_LPUART_PARITY_NONE;
+  LPUART_InitStruct.TransferDirection = LL_LPUART_DIRECTION_TX_RX;
+  LPUART_InitStruct.HardwareFlowControl = LL_LPUART_HWCONTROL_NONE;
+  LL_LPUART_Init(LPUART1, &LPUART_InitStruct);
+  LL_LPUART_SetTXFIFOThreshold(LPUART1, LL_LPUART_FIFOTHRESHOLD_1_8);
+  LL_LPUART_SetRXFIFOThreshold(LPUART1, LL_LPUART_FIFOTHRESHOLD_1_8);
+  LL_LPUART_DisableFIFO(LPUART1);
+
+  /* USER CODE BEGIN WKUPType LPUART1 */
+
+  /* USER CODE END WKUPType LPUART1 */
+
+  LL_LPUART_Enable(LPUART1);
+
+  /* Polling LPUART1 initialisation */
+  while((!(LL_LPUART_IsActiveFlag_TEACK(LPUART1))) || (!(LL_LPUART_IsActiveFlag_REACK(LPUART1))))
   {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetTxFifoThreshold(&hlpuart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetRxFifoThreshold(&hlpuart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_DisableFifoMode(&hlpuart1) != HAL_OK)
-  {
-    Error_Handler();
   }
   /* USER CODE BEGIN LPUART1_Init 2 */
 
@@ -542,8 +575,8 @@ static void MX_DMA_Init(void)
   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 3, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
   /* DMA1_Channel2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 3, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Channel2_IRQn);
+  NVIC_SetPriority(DMA1_Channel2_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),3, 0));
+  NVIC_EnableIRQ(DMA1_Channel2_IRQn);
   /* DMA1_Channel3_IRQn interrupt configuration */
   NVIC_SetPriority(DMA1_Channel3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),3, 0));
   NVIC_EnableIRQ(DMA1_Channel3_IRQn);
@@ -576,10 +609,10 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
-                          |IFP_VBUS_Pin, GPIO_PIN_RESET);
+                          |IFP_VBUS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(HUB_RESET_GPIO_Port, HUB_RESET_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(HUB_RESET_GPIO_Port, HUB_RESET_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : NRST_Pin */
   GPIO_InitStruct.Pin = NRST_Pin;
@@ -591,14 +624,14 @@ static void MX_GPIO_Init(void)
                            IFP_VBUS_Pin */
   GPIO_InitStruct.Pin = LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
                           |IFP_VBUS_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : HUB_RESET_Pin */
   GPIO_InitStruct.Pin = HUB_RESET_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(HUB_RESET_GPIO_Port, &GPIO_InitStruct);
@@ -626,9 +659,66 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+
+  HAL_GPIO_WritePin(IFP_VBUS_GPIO_Port, IFP_VBUS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(HUB_RESET_GPIO_Port, HUB_RESET_Pin, GPIO_PIN_RESET);
+  HAL_Delay(1);
+  HAL_GPIO_WritePin(HUB_RESET_GPIO_Port, HUB_RESET_Pin, GPIO_PIN_SET);
+  HAL_Delay(100);
+
+  volatile HAL_StatusTypeDef ret = HAL_OK;
+
+  uint8_t hubConfig[] = {
+		  0x00,
+		  0x24,
+		  0x04,
+		  0x04,
+		  0x25,
+		  0xA1,
+		  0x10,
+		  0xDB,
+
+//		  0x10,
+//		  0x00,
+		  0x18,
+		  0x02,
+
+		  0x00,
+		  0x00,
+		  0x00,
+		  0x64,
+		  0x00,
+		  0x64,
+		  0x32,
+  };
+
+  uint8_t regTest = 0;
+
+  for (int i = 1; i < sizeof(hubConfig); i++) {
+	  regTest = hubConfig[i];
+	  ret = HAL_I2C_Mem_Write(&hi2c1, 0x58, i, I2C_MEMADD_SIZE_8BIT, &regTest, 1, HAL_MAX_DELAY);
+  }
+
+  regTest = 0x01;
+  ret = HAL_I2C_Mem_Write(&hi2c1, 0x58, 0x0, I2C_MEMADD_SIZE_8BIT, &regTest, 1, HAL_MAX_DELAY);
+
+  HAL_Delay(1000);
+
+  ret = HAL_I2C_IsDeviceReady(&hi2c1, 0xBA, 1, HAL_MAX_DELAY);
+  uint8_t reg0Bh = 0x01;
+  ret = HAL_I2C_Mem_Write(&hi2c1, 0xBA, 0xB, I2C_MEMADD_SIZE_8BIT, &reg0Bh, 1, HAL_MAX_DELAY);
+  uint8_t reg0Ah = 0x02;
+  ret = HAL_I2C_Mem_Write(&hi2c1, 0xBA, 0xA, I2C_MEMADD_SIZE_8BIT, &reg0Ah, 1, HAL_MAX_DELAY);
+
+  HAL_GPIO_WritePin(IFP_VBUS_GPIO_Port, IFP_VBUS_Pin, GPIO_PIN_SET);
+
+  regTest = regTest;
+  ret = ret;
   for(;;)
   {
-    osDelay(1);
+	HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+	CDC_Transmit_FS("TEST\r\n", 6);
+    osDelay(1000);
   }
   /* USER CODE END 5 */
 }
@@ -650,7 +740,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+#ifdef _GUI_INTERFACE
+  if (htim->Instance == TIM6) {
+	  GUI_TimerCounter();
+  }
+#endif
   /* USER CODE END Callback 1 */
 }
 

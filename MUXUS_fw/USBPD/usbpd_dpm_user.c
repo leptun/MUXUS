@@ -414,7 +414,15 @@ void USBPD_DPM_SetDataInfo(uint8_t PortNum, USBPD_CORE_DataInfoType_TypeDef Data
 void USBPD_DPM_SNK_EvaluateCapabilities(uint8_t PortNum, uint32_t *PtrRequestData, USBPD_CORE_PDO_Type_TypeDef *PtrPowerObjectType)
 {
 /* USER CODE BEGIN USBPD_DPM_SNK_EvaluateCapabilities */
-  DPM_USER_DEBUG_TRACE(PortNum, "ADVICE: update USBPD_DPM_SNK_EvaluateCapabilities");
+//  DPM_USER_DEBUG_TRACE(PortNum, "ADVICE: update USBPD_DPM_SNK_EvaluateCapabilities");
+	USBPD_SNKRDO_TypeDef rdo;
+	rdo.d32 = 0;
+	rdo.FixedVariableRDO.ObjectPosition = 1;
+	rdo.FixedVariableRDO.OperatingCurrentIn10mAunits = 200;
+	rdo.FixedVariableRDO.MaxOperatingCurrent10mAunits = 200;
+	rdo.FixedVariableRDO.CapabilityMismatch = 0;
+	*PtrPowerObjectType = USBPD_CORE_PDO_TYPE_FIXED;
+	*PtrRequestData = rdo.d32;
 /* USER CODE END USBPD_DPM_SNK_EvaluateCapabilities */
 }
 

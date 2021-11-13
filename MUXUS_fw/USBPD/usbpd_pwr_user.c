@@ -28,6 +28,7 @@
 #endif /* _TRACE */
 
 /* USER CODE BEGIN include */
+#include "main.h"
 /* USER CODE END include */
 
 /** @addtogroup BSP
@@ -480,8 +481,12 @@ __weak int32_t BSP_USBPD_PWR_VBUSGetVoltage(uint32_t Instance, uint32_t *pVoltag
   }
   else
   {
-    ret = BSP_ERROR_FEATURE_NOT_SUPPORTED;
-    PWR_DEBUG_TRACE(Instance, "ADVICE: Update BSP_USBPD_PWR_VBUSGetVoltage");
+//    ret = BSP_ERROR_FEATURE_NOT_SUPPORTED;
+//    PWR_DEBUG_TRACE(Instance, "ADVICE: Update BSP_USBPD_PWR_VBUSGetVoltage");
+	  uint32_t adc = HAL_ADC_GetValue(&hadc2);
+	  val = __LL_ADC_CALC_DATA_TO_VOLTAGE(3300UL, adc, LL_ADC_RESOLUTION_12B);
+	  val *= 10;
+	  ret = BSP_ERROR_NONE;
   }
   *pVoltage = val;
   return ret;

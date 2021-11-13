@@ -65,8 +65,6 @@ extern ADC_HandleTypeDef hadc2;
 extern DMA_HandleTypeDef hdma_i2c1_rx;
 extern DMA_HandleTypeDef hdma_i2c1_tx;
 extern I2C_HandleTypeDef hi2c1;
-extern DMA_HandleTypeDef hdma_lpuart1_tx;
-extern UART_HandleTypeDef hlpuart1;
 extern TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN EV */
@@ -193,7 +191,7 @@ void DMA1_Channel2_IRQHandler(void)
   /* USER CODE BEGIN DMA1_Channel2_IRQn 0 */
 
   /* USER CODE END DMA1_Channel2_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_lpuart1_tx);
+
   TRACER_EMB_IRQHandlerDMA();
   /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
 
@@ -364,7 +362,6 @@ void LPUART1_IRQHandler(void)
   /* USER CODE BEGIN LPUART1_IRQn 0 */
 
   /* USER CODE END LPUART1_IRQn 0 */
-  HAL_UART_IRQHandler(&hlpuart1);
   TRACER_EMB_IRQHandlerUSART();
   /* USER CODE BEGIN LPUART1_IRQn 1 */
 

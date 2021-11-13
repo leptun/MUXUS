@@ -30,8 +30,8 @@
 /* USER CODE END 1 */
 
 /* Private variables ---------------------------------------------------------*/
-#define BSP_BOARD_NAME  "";
-#define BSP_BOARD_ID    "";
+#define BSP_BOARD_NAME  "MUXUS";
+#define BSP_BOARD_ID    "Sink";
 
 /* Private functions ---------------------------------------------------------*/
 
