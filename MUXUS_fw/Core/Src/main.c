@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "usbd_cdc_if.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,6 +59,13 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 128 * 4
 };
+/* Definitions for controlTask */
+osThreadId_t controlTaskHandle;
+const osThreadAttr_t controlTask_attributes = {
+  .name = "controlTask",
+  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 256 * 4
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -73,6 +80,7 @@ static void MX_I2C1_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_UCPD1_Init(void);
 void StartDefaultTask(void *argument);
+extern void controlTask_main(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -146,6 +154,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of controlTask */
+  controlTaskHandle = osThreadNew(controlTask_main, NULL, &controlTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -355,7 +366,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x30A0A7FB;
+  hi2c1.Init.Timing = 0x10802D9B;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
@@ -659,67 +670,8 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-
-  HAL_GPIO_WritePin(IFP_VBUS_GPIO_Port, IFP_VBUS_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(HUB_RESET_GPIO_Port, HUB_RESET_Pin, GPIO_PIN_RESET);
-  HAL_Delay(1);
-  HAL_GPIO_WritePin(HUB_RESET_GPIO_Port, HUB_RESET_Pin, GPIO_PIN_SET);
-  HAL_Delay(100);
-
-  volatile HAL_StatusTypeDef ret = HAL_OK;
-
-  uint8_t hubConfig[] = {
-		  0x00,
-		  0x24,
-		  0x04,
-		  0x04,
-		  0x25,
-		  0xA1,
-		  0x10,
-		  0xDB,
-
-//		  0x10,
-//		  0x00,
-		  0x18,
-		  0x02,
-
-		  0x00,
-		  0x00,
-		  0x00,
-		  0x64,
-		  0x00,
-		  0x64,
-		  0x32,
-  };
-
-  uint8_t regTest = 0;
-
-  for (int i = 1; i < sizeof(hubConfig); i++) {
-	  regTest = hubConfig[i];
-	  ret = HAL_I2C_Mem_Write(&hi2c1, 0x58, i, I2C_MEMADD_SIZE_8BIT, &regTest, 1, HAL_MAX_DELAY);
-  }
-
-  regTest = 0x01;
-  ret = HAL_I2C_Mem_Write(&hi2c1, 0x58, 0x0, I2C_MEMADD_SIZE_8BIT, &regTest, 1, HAL_MAX_DELAY);
-
-  HAL_Delay(1000);
-
-  ret = HAL_I2C_IsDeviceReady(&hi2c1, 0xBA, 1, HAL_MAX_DELAY);
-  uint8_t reg0Bh = 0x01;
-  ret = HAL_I2C_Mem_Write(&hi2c1, 0xBA, 0xB, I2C_MEMADD_SIZE_8BIT, &reg0Bh, 1, HAL_MAX_DELAY);
-  uint8_t reg0Ah = 0x02;
-  ret = HAL_I2C_Mem_Write(&hi2c1, 0xBA, 0xA, I2C_MEMADD_SIZE_8BIT, &reg0Ah, 1, HAL_MAX_DELAY);
-
-  HAL_GPIO_WritePin(IFP_VBUS_GPIO_Port, IFP_VBUS_Pin, GPIO_PIN_SET);
-
-  regTest = regTest;
-  ret = ret;
-  for(;;)
-  {
-	HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-	CDC_Transmit_FS("TEST\r\n", 6);
-    osDelay(1000);
-  }
+	for (;;)
+		osDelay(1);
   /* USER CODE END 5 */
 }
 
