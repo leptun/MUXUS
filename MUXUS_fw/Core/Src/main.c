@@ -98,7 +98,7 @@ extern void controlTask_main(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  bootapp();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

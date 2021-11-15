@@ -3,6 +3,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "usbd_cdc_if.h"
+#include "bootapp.h"
 
 ////std libs
 //#include <stdio.h>
@@ -74,6 +75,11 @@ extern "C" void controlTask_main(void *argument) {
 				if (activeUpstream >= (sizeof(upstreams) / sizeof(upstreams[0])))
 					activeUpstream = 1;
 				switchToUpstream(activeUpstream);
+			}
+			else {
+				boot_app_magic = BOOT_APP_MAGIC;
+				boot_app_flags = BOOT_APP_JMP_TO_SYSTEM_MEMORY;
+				HAL_NVIC_SystemReset();
 			}
 		}
 	}
