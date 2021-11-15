@@ -129,6 +129,12 @@ SECTIONS
     . = ALIGN(4);
   } >FLASH
 
+  .no_init :
+  {
+    . = ALIGN(4);
+    *(.no_init)
+  } > RAM
+
   /* Used by the startup to initialize data */
   _sidata = LOADADDR(.data);
 

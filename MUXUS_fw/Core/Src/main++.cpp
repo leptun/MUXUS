@@ -24,7 +24,7 @@ constexpr TS3USBCA4::Channels upstreams[] {
 	TS3USBCA4::Channels::LnC,
 };
 
-uint8_t activeUpstream = 0;
+uint8_t activeUpstream;
 constexpr uint8_t defaultUpstream = 2;
 
 constexpr USB2504A::Config hubConfig = {
