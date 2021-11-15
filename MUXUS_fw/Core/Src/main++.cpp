@@ -57,6 +57,7 @@ void switchToUpstream(uint8_t port) {
 }
 
 extern "C" void controlTask_main(void *argument) {
+	osDelay(500);
 	hub.init();
 	mux.init();
 
