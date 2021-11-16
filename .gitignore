@@ -34,3 +34,5 @@ fp-info-cache
 Hardware/MUXUS.kicad_prl
 
 MUXUS_fw/.settings/stm32cubeide.project.prefs
+
+MUXUS_fw/MUXUS_fw.cfg
