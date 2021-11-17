@@ -1,5 +1,9 @@
 # MUXUS
-This repository contains the MUXUS project, a USB 2.0 switch with 4 inputs (3B + 1C_PD) and 4 outputs (3A + STM32)
+This repository contains the MUXUS project, a USB 2.0 switch with 4 inputs (3xB + 1C_PD) and 4 outputs (3xA + STM32)
+
+![image](https://user-images.githubusercontent.com/17808203/142241444-256b472b-77db-441e-9114-9d7403cddd42.png)
+![image](https://user-images.githubusercontent.com/17808203/142241922-750ac954-f364-440b-8392-d519324ca072.png)
+![image](https://user-images.githubusercontent.com/17808203/142241771-7259bca0-9416-40ce-a2e0-f9933713268e.png)
 
 The project is split into multiple logical parts, all interconected on a PCB.
 1. Upstream USB ports
@@ -78,3 +82,4 @@ A small LDO would have been much better suited and it might even have been more 
   - The clock circuitry for the hub is wrong. 32pF capacitors should have been used and there should also be a 1M resistor between the crystal leads.
   - The USB signal routing is *horrible*. I'm surprised it works at all. I should improve that aspect if I ever make another revision (:doubt:).
   - There is a pinout conflict between the UCPD dead battery signals and the system memory DFU bootloader. When entering the bootloader, the DBCC1 gets assigned as USART1_TX, disabling the dead battery signal. As a result, power gets cut. This issue can be avoided if the usb C cable is connected with one of the ends reversed, so it works only 50% of the time. There are two solutions for a future revision of the board: I could use a protection IC with integrated DB signals such as the one used in X-NUCLEO-USBPDM1, or I could just use an MCU which doesn't have this pinout conflict (such as STM32G0B1KET6N or similar).
+  - The component placement could be better and the board could be smaller.
