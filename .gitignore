@@ -6,6 +6,7 @@
 *.bak
 *.bck
 *.kicad_pcb-bak
+*.kicad_prl
 *~
 _autosave-*
 *.tmp
@@ -30,9 +31,4 @@ fp-info-cache
 /MUXUS_fw/Release/
 /USBC_PD-USB_2.0-nucleo_G474RE/Debug/
 /USBC_PD-USB_2.0-nucleo_G474RE/Release/
-
-Hardware/MUXUS.kicad_prl
-
-MUXUS_fw/.settings/stm32cubeide.project.prefs
-
-MUXUS_fw/MUXUS_fw.cfg
+/MUXUS_fw/.settings/
