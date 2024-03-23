@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <bootapp.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

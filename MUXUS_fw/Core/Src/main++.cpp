@@ -2,7 +2,6 @@
 
 #include "main.h"
 #include "cmsis_os.h"
-#include "usbd_cdc_if.h"
 #include "bootapp.h"
 
 ////std libs
