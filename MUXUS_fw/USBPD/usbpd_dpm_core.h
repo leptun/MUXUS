@@ -63,7 +63,6 @@ USBPD_StatusTypeDef USBPD_DPM_InitCore(void);
 USBPD_StatusTypeDef USBPD_DPM_InitOS(void);
 void                USBPD_DPM_Run(void);
 void                USBPD_DPM_TimerCounter(void);
- /* USBPDCORE_LIB_NO_PD */
 __WEAK void         USBPD_DPM_ErrorHandler(void);
 /* USER CODE BEGIN functions */
 
@@ -74,5 +73,3 @@ __WEAK void         USBPD_DPM_ErrorHandler(void);
 #endif
 
 #endif /* __USBPD_DPM_CORE_H_ */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

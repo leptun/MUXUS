@@ -99,6 +99,7 @@ void Error_Handler(void);
 #define IFP_VBUS_GPIO_Port GPIOA
 #define BOOT0_Pin GPIO_PIN_8
 #define BOOT0_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -108,5 +109,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
