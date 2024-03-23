@@ -4,6 +4,8 @@
 #include "cmsis_os.h"
 #include "bootapp.h"
 
+#include <usb_device.h>
+
 ////std libs
 //#include <stdio.h>
 //#include <algorithm>
@@ -55,6 +57,13 @@ void switchToUpstream(uint8_t port) {
 	}
 }
 
+
+uint32_t lastMSC_Pulse = 0;
+
+void notify_check_for_ready(void) {
+	lastMSC_Pulse = osKernelGetTickCount();
+}
+
 extern "C" void controlTask_main(void *argument) {
 	osDelay(500);
 	hub.init();
@@ -81,6 +90,13 @@ extern "C" void controlTask_main(void *argument) {
 				boot_app_flags = BOOT_APP_JMP_TO_SYSTEM_MEMORY;
 				HAL_NVIC_SystemReset();
 			}
+		}
+
+		if (osKernelGetTickCount() - lastMSC_Pulse > 10000) {
+			MX_USB_Device_DeInit();
+			osDelay(500);
+			MX_USB_Device_Init();
+			lastMSC_Pulse = osKernelGetTickCount();
 		}
 	}
 }

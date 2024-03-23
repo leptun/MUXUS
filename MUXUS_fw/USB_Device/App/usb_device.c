@@ -58,6 +58,12 @@ extern USBD_DescriptorsTypeDef MSC_Desc;
  */
 /* USER CODE BEGIN 1 */
 
+void MX_USB_Device_DeInit(void) {
+  if (USBD_DeInit(&hUsbDeviceFS) != USBD_OK) {
+	Error_Handler();
+  }
+}
+
 /* USER CODE END 1 */
 
 /**

@@ -23,6 +23,8 @@
 
 /* USER CODE BEGIN INCLUDE */
 
+#include <main.h>
+
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -286,6 +288,7 @@ int8_t STORAGE_GetCapacity_FS(uint8_t lun, uint32_t *block_num, uint16_t *block_
 int8_t STORAGE_IsReady_FS(uint8_t lun)
 {
   /* USER CODE BEGIN 4 */
+	notify_check_for_ready();
   return (USBD_FAIL);
   /* USER CODE END 4 */
 }

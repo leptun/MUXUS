@@ -72,6 +72,8 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
+extern void notify_check_for_ready(void);
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
