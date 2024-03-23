@@ -63,7 +63,7 @@
   */
 
 #define STORAGE_LUN_NBR                  1
-#define STORAGE_BLK_NBR                  16
+#define STORAGE_BLK_NBR                  0x10000
 #define STORAGE_BLK_SIZ                  0x200
 
 /* USER CODE BEGIN PRIVATE_DEFINES */
@@ -119,8 +119,13 @@ const int8_t STORAGE_Inquirydata_FS[] = {/* 36 */
 If you find any bugs or get any questions, feel free to file an\r\n\
 issue at github.com/hathach/tinyusb"
 
+enum
+{
+  DISK_BLOCK_NUM  = 16, // 8KB is the smallest size that windows allow to mount
+  DISK_BLOCK_SIZE = 512
+};
 
-const uint8_t msc_disk[STORAGE_BLK_NBR][STORAGE_BLK_SIZ] = {
+const uint8_t msc_disk[DISK_BLOCK_NUM][DISK_BLOCK_SIZE] = {
 		  //------------- Block0: Boot Sector -------------//
 		  // byte_per_sector    = DISK_BLOCK_SIZE; fat12_sector_num_16  = DISK_BLOCK_NUM;
 		  // sector_per_cluster = 1; reserved_sectors = 1;
@@ -267,8 +272,8 @@ int8_t STORAGE_Init_FS(uint8_t lun)
 int8_t STORAGE_GetCapacity_FS(uint8_t lun, uint32_t *block_num, uint16_t *block_size)
 {
   /* USER CODE BEGIN 3 */
-  *block_num  = STORAGE_BLK_NBR;
-  *block_size = STORAGE_BLK_SIZ;
+  *block_num  = DISK_BLOCK_NUM;
+  *block_size = DISK_BLOCK_SIZE;
   return (USBD_OK);
   /* USER CODE END 3 */
 }
@@ -307,10 +312,10 @@ int8_t STORAGE_Read_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t bl
 {
   /* USER CODE BEGIN 6 */
   // out of ramdisk
-  if ( blk_addr >= STORAGE_BLK_NBR ) return -1;
+  if ( blk_addr >= DISK_BLOCK_NUM ) return -1;
 
   uint8_t const* addr = msc_disk[blk_addr];
-  memcpy(buf, addr, blk_len * STORAGE_BLK_SIZ);
+  memcpy(buf, addr, blk_len * DISK_BLOCK_SIZE);
   return (USBD_OK);
   /* USER CODE END 6 */
 }
